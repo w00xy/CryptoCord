@@ -1,8 +1,12 @@
-# React + Vite
+# CryptoCord 
+Проект был реализован с помощью библиотеки React. Для сборки проекта используется Vite. Доп. библиотеки - react-router-dom...
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Home page
+![Home](https://github.com/user-attachments/assets/9557d448-a33d-4e5d-934c-fb25210c3fc5)
+## To Clone Repo
 
-Currently, two official plugins are available:
+1. ```git clone https://github.com/w00xy/CryptoCord.git```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. ```npm i --save react-router-dom```
+
+3. ```npm run dev```
