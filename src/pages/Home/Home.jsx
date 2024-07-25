@@ -6,6 +6,22 @@ export default function Home() {
 
 	const { allCoin, currency } = useContext(CoinContext)
 	const [displayCoin, setDisplayCoin] = useState([]);
+	const [input, setInput] = useState('');
+
+	const inputHandler = (event) => {
+		setInput(event.target.value)
+		if (event.target.value === '') {
+			setDisplayCoin(allCoin)
+		}
+	}
+
+	const searchHandler = async (event) => {
+		event.preventDefault()
+		const coins = await allCoin.filter((item) => {
+			return item.name.toLowerCase().includes(input.toLowerCase())
+		})
+		setDisplayCoin(coins)
+	};
 
 	useEffect(() => {
 		setDisplayCoin(allCoin)
@@ -16,8 +32,17 @@ export default function Home() {
 			<div className='hero'>
 				<h1>Today's Cryptocurrency Prices by Market Cap</h1>
 				<p>Sign up to explore more about cryptos.</p>
-				<form>
-					<input type='text' placeholder='Search crypto..' />
+				<form
+					onSubmit={searchHandler}
+					// onChange={searchHandler} 
+				>
+					<input
+						onChange={inputHandler}
+						value={input}
+						type='text'
+						placeholder='Search crypto..'
+						required
+					/>
 					<button type='submit'>Search</button>
 				</form>
 			</div>
@@ -44,7 +69,8 @@ export default function Home() {
 						>
 							{Math.floor(item.price_change_percentage_24h * 100) / 100 > 0
 								? '+' + Math.floor(item.price_change_percentage_24h * 100) / 100
-								: Math.floor(item.price_change_percentage_24h * 100) / 100}%
+								: Math.floor(item.price_change_percentage_24h * 100) / 100}
+							%
 						</p>
 						<p className='cmc'>
 							{currency.symbol} {item.market_cap.toLocaleString()}
