@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding: 20px 10%;
   color: #ddd;
-  border-bottom: 2px solid #3c3c3c;
+  border-bottom: 2px solid #42424200;
 }
 .navbar .logo{
   width: max(14vw, 150px);
@@ -46,4 +46,24 @@ ul{
 
 .navbar button img {
   width: 13px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 20px 8%;
+  }
+  .navbar button {
+    gap: 8px;
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 5%;
+  }
+  .navbar ul {
+    display: none;
+  }
 }

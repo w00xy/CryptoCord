@@ -1,0 +1,10 @@
+.footer p {
+  padding: 15px 0;
+  text-align: center;
+  margin: auto;
+  border-top: 1px solid #989898;
+  font-size: 13px;
+  max-width: 80%;
+  position: sticky;
+  top: 100vh;
+}
